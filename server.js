@@ -9,21 +9,21 @@ const EDIT_KEY = process.env.EDIT_KEY || "";
 const DATABASE_URL = process.env.DATABASE_URL || "";
 
 const CATEGORIES = [
-  { id: "classic", label: "Classic", group: "Arcade", order: 1 },
-  { id: "gates", label: "Gates", group: "Arcade", order: 2 },
-  { id: "assault", label: "Assault", group: "Arcade", order: 3 },
-  { id: "surge", label: "Surge", group: "Arcade", order: 4 },
-  { id: "crash", label: "Crash", group: "Arcade", order: 5 },
-  { id: "boss_rush", label: "Boss Rush", group: "Arcade", order: 6 },
-  { id: "campaign_experience_ship_a", label: "Experience - Defier", group: "Campaign", order: 7 },
-  { id: "campaign_experience_ship_b", label: "Experience - Redeemer", group: "Campaign", order: 8 },
-  { id: "campaign_experience_ship_c", label: "Experience - Sentinel", group: "Campaign", order: 9 },
-  { id: "campaign_challenge_ship_a", label: "Challenge - Defier", group: "Campaign", order: 10 },
-  { id: "campaign_challenge_ship_b", label: "Challenge - Redeemer", group: "Campaign", order: 11 },
-  { id: "campaign_challenge_ship_c", label: "Challenge - Sentinel", group: "Campaign", order: 12 },
-  { id: "campaign_revolution_ship_a", label: "Revolution - Defier", group: "Campaign", order: 13 },
-  { id: "campaign_revolution_ship_b", label: "Revolution - Redeemer", group: "Campaign", order: 14 },
-  { id: "campaign_revolution_ship_c", label: "Revolution - Sentinel", group: "Campaign", order: 15 }
+  { id: "campaign_experience_ship_b", label: "Experience - Redeemer", group: "Campaign", order: 1 },
+  { id: "campaign_challenge_ship_b", label: "Challenge - Redeemer", group: "Campaign", order: 2 },
+  { id: "campaign_revolution_ship_b", label: "Revolution - Redeemer", group: "Campaign", order: 3 },
+  { id: "campaign_experience_ship_a", label: "Experience - Defier", group: "Campaign", order: 4 },
+  { id: "campaign_challenge_ship_a", label: "Challenge - Defier", group: "Campaign", order: 5 },
+  { id: "campaign_revolution_ship_a", label: "Revolution - Defier", group: "Campaign", order: 6 },
+  { id: "campaign_experience_ship_c", label: "Experience - Sentinel", group: "Campaign", order: 7 },
+  { id: "campaign_challenge_ship_c", label: "Challenge - Sentinel", group: "Campaign", order: 8 },
+  { id: "campaign_revolution_ship_c", label: "Revolution - Sentinel", group: "Campaign", order: 9 },
+  { id: "classic", label: "Classic", group: "Arcade", order: 10 },
+  { id: "gates", label: "Gates", group: "Arcade", order: 11 },
+  { id: "assault", label: "Assault", group: "Arcade", order: 12 },
+  { id: "surge", label: "Surge", group: "Arcade", order: 13 },
+  { id: "crash", label: "Crash", group: "Arcade", order: 14 },
+  { id: "boss_rush", label: "Boss Rush", group: "Arcade", order: 15 }
 ];
 
 const CATEGORY_IDS = new Set(CATEGORIES.map((c) => c.id));
