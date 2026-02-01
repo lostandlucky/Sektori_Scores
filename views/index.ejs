@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sektori Scores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-wrap">
+        <img src="/logo.jpeg" alt="Sektori logo" />
+      </div>
+      <div class="title-wrap">
+        <p class="kicker">Neon Arcade Operations</p>
+        <h1>High Score Tracker</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="score-section">
+        <div class="segmented" role="tablist" aria-label="Score groups">
+          <button class="segment active" data-filter="all" type="button">All</button>
+          <button class="segment" data-filter="Arcade" type="button">Arcade</button>
+          <button class="segment" data-filter="Campaign" type="button">Campaign</button>
+        </div>
+
+        <div class="score-board">
+          <div class="score-header">
+            <div class="col-name">Jared</div>
+            <div class="col-label">Mode</div>
+            <div class="col-name">Steve</div>
+          </div>
+
+          <% categories.forEach(function(category) { %>
+            <div class="score-row" data-group="<%= category.group %>" data-category-id="<%= category.id %>">
+              <div class="player-col left" data-player="jared">
+                <label>
+                  <span class="player-name">Jared</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="2147483647"
+                    step="1"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    value="<%= scores[category.id].jared %>"
+                    data-player="jared"
+                    data-category-id="<%= category.id %>"
+                    aria-label="Jared score for <%= category.label %>"
+                  />
+                </label>
+                <span class="saved-indicator" aria-hidden="true">Saved</span>
+              </div>
+
+              <div class="label-col">
+                <span class="mode-label"><%= category.label %></span>
+                <span class="mode-group"><%= category.group %></span>
+              </div>
+
+              <div class="player-col right" data-player="steve">
+                <label>
+                  <span class="player-name">Steve</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="2147483647"
+                    step="1"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    value="<%= scores[category.id].steve %>"
+                    data-player="steve"
+                    data-category-id="<%= category.id %>"
+                    aria-label="Steve score for <%= category.label %>"
+                  />
+                </label>
+                <span class="saved-indicator" aria-hidden="true">Saved</span>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.__INITIAL_DATA__ = <%- JSON.stringify(initialData).replace(/</g, "\\u003c") %>;
+      window.__EDIT_KEY__ = <%- JSON.stringify(editKey || "") %>;
+    </script>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

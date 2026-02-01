@@ -1,0 +1,14 @@
+{
+  "name": "sektori-scores",
+  "version": "0.1.0",
+  "description": "Local 2-player high score tracker prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "pg": "^8.11.5"
+  }
+}
