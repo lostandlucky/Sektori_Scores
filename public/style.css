@@ -254,9 +254,14 @@ input[type="number"]:focus {
   }
 
   .score-row {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 14px;
     background: rgba(6, 12, 24, 0.8);
+  }
+
+  .label-col {
+    order: -1;
   }
 
   .label-col {
