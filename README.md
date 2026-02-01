@@ -10,10 +10,16 @@ Local 2-player high score tracker prototype for Jared and Steve.
 npm install
 ```
 
-2. Start the server (DATABASE_URL required):
+2. Create a `.env` with your Postgres connection string:
 
 ```bash
-DATABASE_URL=postgres://user:pass@localhost:5432/sektori npm start
+DATABASE_URL=postgres://user:pass@localhost:5432/sektori
+```
+
+3. Start the server:
+
+```bash
+npm start
 ```
 
 Open http://localhost:3000 in your browser.
